@@ -1,7 +1,7 @@
 package it.uniroma3.diadia;
 import java.util.Scanner;
 
-public class IOConsole {
+public class IOConsole implements IO {
 	
 	private String comando;
 		

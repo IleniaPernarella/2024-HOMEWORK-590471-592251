@@ -61,20 +61,30 @@ public class Borsa {
 	}
 
 	public Attrezzo removeAttrezzo(String nomeAttrezzo) {
-		Attrezzo a = null;
 
-		if(nomeAttrezzo!=null)
+		int j=0;
+		Attrezzo[] a=new Attrezzo[10];
+		Attrezzo b=null;
+
+		if(nomeAttrezzo!=null) {
 			for (int i= 0; i<this.numeroAttrezzi; i++) {
 				if(this.attrezzi[i]!=null)
-					if(this.attrezzi[i].getNome().equals(nomeAttrezzo)) {
-						a=this.attrezzi[i];
-						this.attrezzi[i]=this.attrezzi[i+1];
-						this.numeroAttrezzi--;
-					}
+					if(!(this.attrezzi[i].getNome().equals(nomeAttrezzo))) {
+
+						a[j]=this.attrezzi[i];
+						b=a[i];
+
+					}else
+						j--;
+				j++;
 
 			}
+			if(numeroAttrezzi!=0)
+				this.numeroAttrezzi--;
+			this.attrezzi=a;
 
-		return a;
+
+		}return b;
 	}
 
 	public String toString() {

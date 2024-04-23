@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 
@@ -12,10 +13,11 @@ class TestPartita {
 
 	private Partita partita;
 	private Stanza stanza;
+	private IO io;
 	
 	@BeforeEach
 	public void setUp() {
-	partita = new Partita();
+	partita = new Partita(io);
 	stanza = new Stanza("n11");
 	}
 	
