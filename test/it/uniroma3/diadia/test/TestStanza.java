@@ -61,7 +61,7 @@ class TestStanza {
 	@Test
 	public void testRicercaAttrezzoCercatoETrovato() {
 		stanza.addAttrezzo(attrezzo);
-		assertEquals("osso",stanza.getAttrezzi()[0].getNome());
+		assertTrue(stanza.hasAttrezzo("osso"));
 	}
 	
 	@Test
