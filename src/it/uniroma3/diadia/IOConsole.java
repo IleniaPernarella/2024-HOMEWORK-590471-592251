@@ -3,14 +3,20 @@ import java.util.Scanner;
 
 public class IOConsole implements IO {
 	
-	private String comando;
+	
+	private Scanner scannerDiLinee;
+	
+	public IOConsole(Scanner scannerDiLinee) {
+		this.scannerDiLinee=scannerDiLinee;
+	}
 		
 	public void mostraMessaggio(String msg) {
 		System.out.println(msg);
 	}
 	
 	public String leggiRiga() {
-		Scanner scannerDiLinee = new Scanner(System.in);
+		
+		
 		String riga = scannerDiLinee.nextLine();
 		//scannerDiLinee.close();
 		return riga;
@@ -24,7 +30,7 @@ public class IOConsole implements IO {
 	}*/
 	
 	public String parola(String msg) {
-		Scanner scannerDiLinee = new Scanner(msg);
+		 scannerDiLinee = new Scanner(msg);
 		if(scannerDiLinee.hasNext())
 		msg = scannerDiLinee.next();
 		//scannerDiLinee.close();
@@ -32,7 +38,7 @@ public class IOConsole implements IO {
 	}
 	
 	public String parametro(String msg) {
-		Scanner scannerDiLinee = new Scanner(msg);
+		 scannerDiLinee = new Scanner(msg);
 		
 		if(scannerDiLinee.hasNext()) 
 		msg = scannerDiLinee.next();

@@ -15,7 +15,7 @@ import it.uniroma3.diadia.giocatore.Giocatore;
 public class Partita {
 
 	
-	private Labirinto labirinto = new Labirinto();
+	private Labirinto labirinto = new Labirinto("Labirinto1.txt");
 	private Giocatore giocatore= new Giocatore();
 	private boolean finita;
 	private IO io;
@@ -23,9 +23,8 @@ public class Partita {
 
 
 	public Partita(IO io){
-		labirinto.creaStanze();
+		//labirinto.creaStanze();
 		this.io=io;
-		this.finita = false;
 	}
 	
 	public Partita(Labirinto labirinto, IO io){

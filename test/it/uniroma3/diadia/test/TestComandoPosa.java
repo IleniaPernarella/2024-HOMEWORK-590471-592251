@@ -22,7 +22,7 @@ class TestComandoPosa {
 	@BeforeEach
 	public void setUp() {
 
-		io=new IOConsole();
+		io=new IOConsole(null);
 		partita=new Partita(io);
 		attrezzo=new Attrezzo("lanterna",3);
 		posa=new ComandoPosa();

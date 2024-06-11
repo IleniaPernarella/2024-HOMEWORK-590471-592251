@@ -5,9 +5,13 @@ package it.uniroma3.diadia.ambienti;
 public class StanzaBloccata extends Stanza {
 
 
-
 	private String attrezzoSblocco;
 	private String direzioneBloccata;
+	
+
+	public StanzaBloccata() {
+		super();
+	}
 
 
 	public StanzaBloccata(String nome, String attrezzoSblocco, String direzioneBloccata) {
@@ -37,5 +41,16 @@ public class StanzaBloccata extends Stanza {
 					 +direzioneBloccata +" devi posare l'attrezzo "
 			+attrezzoSblocco+"\n" +super.getDescrizione();
 	}
+	
+
+
+	public void setAttrezzoSblocco(String attrezzoSblocco) {
+		this.attrezzoSblocco = attrezzoSblocco;
+	}
+
+	public void setDirezioneBloccata(String direzioneBloccata) {
+		this.direzioneBloccata = direzioneBloccata;
+	}
+
 
 }

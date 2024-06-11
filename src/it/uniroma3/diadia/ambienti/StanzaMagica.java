@@ -9,6 +9,11 @@ public class StanzaMagica extends Stanza{
 	private int sogliaMagica;
 
 
+	public StanzaMagica() {
+		super();
+	}
+
+
 	public StanzaMagica(String nome) {
 		this(nome, SOGLIA_MAGICA_DEFAULT);
 	}
@@ -37,5 +42,15 @@ public class StanzaMagica extends Stanza{
 		attrezzo = new Attrezzo(nomeInvertito.toString(),
 				pesoX2);
 		return attrezzo;
+	}
+
+
+	public void setContatoreAttrezziPosati(int contatoreAttrezziPosati) {
+		this.contatoreAttrezziPosati = contatoreAttrezziPosati;
+	}
+
+
+	public void setSogliaMagica(int sogliaMagica) {
+		this.sogliaMagica = sogliaMagica;
 	}
 }

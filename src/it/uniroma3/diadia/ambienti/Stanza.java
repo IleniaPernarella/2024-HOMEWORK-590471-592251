@@ -4,6 +4,7 @@ package it.uniroma3.diadia.ambienti;
 import java.util.*;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
+import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
 
 /**
  * Classe Stanza - una stanza in un gioco di ruolo.
@@ -18,6 +19,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Stanza {
 
+	
 	static final private int NUMERO_MASSIMO_DIREZIONI = 4;
 	static final private int NUMERO_MASSIMO_ATTREZZI = 10;
 
@@ -26,7 +28,12 @@ public class Stanza {
 	private Set<Attrezzo>attrezzi;
 	private Map<String,Stanza>stanzeAdiacenti;
 	private int numeroStanzeAdiacenti;
+	private AbstractPersonaggio personaggio;
 
+	
+	public Stanza() {
+		super();
+	}
 
 	/**
 	 * Crea una stanza. Non ci sono stanze adiacenti, non ci sono attrezzi.
@@ -48,10 +55,10 @@ public class Stanza {
 	 */
 	public void impostaStanzaAdiacente(String direzione, Stanza stanza) {
 
-		if(direzione=="nord" ||direzione=="sud" || direzione=="est" || direzione=="ovest") {
-		this.stanzeAdiacenti.put(direzione, stanza);
-		if(this.numeroStanzeAdiacenti<NUMERO_MASSIMO_DIREZIONI)
-			this.numeroStanzeAdiacenti++;
+		if(direzione.equals("nord") ||direzione.equals("sud") || direzione.equals("est") || direzione.equals("ovest")) {
+			this.stanzeAdiacenti.put(direzione, stanza);
+			if(this.numeroStanzeAdiacenti<NUMERO_MASSIMO_DIREZIONI)
+				this.numeroStanzeAdiacenti++;
 		}
 	}
 
@@ -89,7 +96,7 @@ public class Stanza {
 	/*public Set<Attrezzo> getAttrezziSet() {
 		return this.attrezzi;
 	}*/
-	
+
 	public List<Attrezzo> getAttrezzi() {
 		ArrayList<Attrezzo> a = new ArrayList<>(attrezzi);
 		return a;
@@ -105,7 +112,7 @@ public class Stanza {
 			this.attrezzi.add(attrezzo);
 			this.numeroAttrezzi++;
 			return true;
-				
+
 		}
 		else {
 			return false;
@@ -135,6 +142,10 @@ public class Stanza {
 			risultato.append(it2.next().toString()+" ");
 		}
 
+		if(personaggio!=null) {
+			risultato.append("\nPersonaggio nella stanza: ");
+			risultato.append(personaggio.toString());
+		}
 		return risultato.toString();
 	}
 
@@ -202,14 +213,14 @@ public class Stanza {
 
 
 	public List<String> getDirezioni() {
-			
-		
+
+
 		List<String> d = new ArrayList<String>();
-		
+
 		d.addAll(stanzeAdiacenti.keySet());
-		
+
 		return d;
-		
+
 		/*String[] direzioni = new String[this.numeroStanzeAdiacenti];
 		for(int i=0; i<this.numeroStanzeAdiacenti; i++)
 			direzioni[i] = this.direzioni[i];
@@ -233,6 +244,14 @@ public class Stanza {
 	public Map<String,Stanza> getMapStanzeAdiacenti() {
 		return this.stanzeAdiacenti;
 	}
-	
-	
+
+
+	public void setPersonaggio(AbstractPersonaggio personaggio) {
+		this.personaggio = personaggio;
+	}
+	public AbstractPersonaggio getPersonaggio() {
+		return this.personaggio;
+	}
+
+
 }

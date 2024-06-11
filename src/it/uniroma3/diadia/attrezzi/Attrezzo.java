@@ -19,6 +19,8 @@ public class Attrezzo implements Comparable<Attrezzo> {
 	private String nome;
 	private int peso;
 
+	
+
 	/**
 	 * Crea un attrezzo
 	 * @param nome il nome che identifica l'attrezzo
@@ -35,6 +37,10 @@ public class Attrezzo implements Comparable<Attrezzo> {
 	 */
 	public String getNome() {
 		return this.nome;
+	}
+	
+	public void setPeso(int peso) {
+		this.peso = peso;
 	}
 
 	/**

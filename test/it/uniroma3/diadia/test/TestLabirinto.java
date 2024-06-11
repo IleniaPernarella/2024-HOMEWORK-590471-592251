@@ -16,7 +16,7 @@ class TestLabirinto {
 	@BeforeEach
 	public void setUp() {
 		
-		labirinto = new Labirinto();
+		labirinto = new Labirinto("Labirinto1.txt");
 		stanza = new Stanza("n11");
 	}
 	

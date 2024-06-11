@@ -29,7 +29,7 @@ class TestComandoVai {
 	@BeforeEach
 	public void setUp() {
 
-		io=new IOConsole();
+		io=new IOConsole(null);
 		partita=new Partita(io);
 		vai=new ComandoVai();
 		stanza1=new Stanza("stanza1");
@@ -105,7 +105,7 @@ class TestComandoVai {
 				.addAdiacenza("cucina","biblioteca" , "ovest")
 				.getLabirinto();	
 		
-		io=new IOConsole();
+		io=new IOConsole(null);
 		partita=new Partita(trilocale,io);
 		vai=new ComandoVai();
 		
